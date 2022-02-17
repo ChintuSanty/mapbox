@@ -5,7 +5,6 @@
       let keepTrack = [];
       const pointHopper = {};
 
-
       // Add your access token
       mapboxgl.accessToken = 'pk.eyJ1Ijoic2FudHljaGludHUiLCJhIjoiY2t4cjlmc2I1MGp5cDJubnludjIzeXR4ZSJ9.K-1gTtD5FCdxJNemZS6t_Q';
 
@@ -232,15 +231,10 @@
             }
           }
         }
-
+				const list= '-83.093,42.376;-83.083,42.363;-83.0759716,42.3943183;-83.1662318,42.4500183;-83.1662318,42.4500183;-83.2437686,42.6567132';
         // Set the profile to `driving`
         // Coordinates will include the current location of the truck,
-        return `https://api.mapbox.com/optimized-trips/v1/mapbox/driving/${coordinates.join(
-          ';'
-        )}?distributions=${distributions.join(
-          ';'
-        )}&overview=full&steps=true&geometries=geojson&source=first&access_token=${
+        return `https://api.mapbox.com/optimized-trips/v1/mapbox/driving/${list}?&overview=full&steps=true&geometries=geojson&source=first&access_token=${
           mapboxgl.accessToken
         }`;
       }
-    
